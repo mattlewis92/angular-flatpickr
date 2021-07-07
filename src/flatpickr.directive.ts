@@ -442,6 +442,10 @@ export class FlatpickrDirective
     });
     options.time_24hr = options.time24hr;
 
+    if (typeof this.convertModelValue === 'undefined') {
+      this.convertModelValue = this.defaults.convertModelValue;
+    }
+
     // workaround bug in flatpickr 4.6 where it doesn't copy the classes across
     // TODO - remove once fix in https://github.com/flatpickr/flatpickr/issues/1860 is released
     options.altInputClass =
